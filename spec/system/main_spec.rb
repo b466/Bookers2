@@ -21,15 +21,15 @@ describe 'ユーザー権限のテスト'  do
   end
   describe 'ログインしていない場合にユーザー関連のURLにアクセス' do
     context 'ユーザー関連のURLにアクセス' do
-      it '一覧画面に遷移できる' do
+      it '一覧画面に遷移できない' do
         visit users_path
         expect(current_path).to eq('/users/sign_in')
       end
-      it '編集画面に遷移できる' do
+      it '編集画面に遷移できない' do
         visit edit_user_path(user.id)
         expect(current_path).to eq('/users/sign_in')
       end
-      it '詳細画面に遷移できる' do
+      it '詳細画面に遷移でない' do
         visit user_path(user.id)
         expect(current_path).to eq('/users/sign_in')
       end
