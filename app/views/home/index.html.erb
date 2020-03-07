@@ -1,6 +1,12 @@
  <div class="container">
  	<div class="row">
 
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
 
 
 
@@ -16,11 +22,9 @@
 		<%= link_to 'Log in', new_user_session_path, class: "btn btn-info btn-block" %>
 	</p>
 
-	<div class="btn btn-success btn-block">
-		<p><%= link_to "/users/sign_up" do %>
-			sign up<% end %>
-		</p>
-	</div>
+	<p>
+		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-block" %>
+	</p>
 </div>
 </div>
 
